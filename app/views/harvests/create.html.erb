@@ -1,0 +1,20 @@
+<h1> Welcome to an On-line Harvest App for Byliner </h1>
+
+<h3> This app will automatically catch all bold and italic cases and put them in the markdown format used by Byliner </h3><br><br>
+
+<h2> Step 1: Right Click on the webpage of the article and select "view source" </h2><br><br>
+
+<h2> Step 2: Scroll down to the text of the article, paste it below, and Click Submit: <h2>
+
+<%= form_for @harvest do |f| %> 
+ 
+
+	<div class="field">
+
+		<%= f.text_area :raw_text, placeholder: "Paste the source code here..." %>
+
+	</div>
+
+
+<%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>
