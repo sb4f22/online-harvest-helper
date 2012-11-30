@@ -3,35 +3,9 @@
 <p> Automatically format an article's <b>bold</b> and <i>italic</i> words in the markdown language used in the Byliner Admin. (<%= mail_to("jj5201@gmail.com", "Report Bugs", :subject => "Markdown App Bug(s)") %>) </p> 
 
 
-<div id="ocr" style="height:500px;width:550px;float:left; padding-right:100px">
-	<h2>For .rtf files: </h2>
-	<ol>
-		<li>In gmail, scroll down to the appropriate file attachment & <b>Click "View as HTML"</b></li>
-		<li>In the html view, <b>Select All & Copy </b>
-		<li><b>Paste</b> into a <u>word processor</u></li> and <b>Save with a .html extensension</b><br></li>(<%= link_to("Need a word processor?", "http://www.libreoffice.org/", :target => "_blank") %>)
-		<li>Open your new .html file in a <u>text editor</u>, <b>Select All & Copy </b></li>
-		<li><b>Paste</b> into the box below & <b>Click Submit</b>!</li>
-	</ol> 
 
 
-
-
-	<%= form_for(@harvest) do |f| %>
-	 
-
-		<div class="field">
-
-			<%= f.text_area :raw_text, size: "70x15", placeholder: "Paste the source code here..." %>
-
-		</div>
-
-
-
-	<%= f.submit "Submit", class: "btn btn-large btn-primary" %>
-	<% end %>
-</div>
-
-<div id="website" style="height:500px;width:500px;float:left;" >
+<div id="website" style="height:500px;width:500px; float:left; padding-right:100px" >
 	<h2>From a Website: </h2>
 	<ol>
 		<li>Navigate to the Print Page of the article, <b>Right Click & Select "View Source" </b></li>
@@ -41,6 +15,7 @@
 		<br>
 		<br>
 		<br>
+		<br>
 	</ol> 
 
 	<%= form_for(@harvest) do |f| %>
@@ -57,3 +32,28 @@
 	<% end %>
 </div>
 
+<div id="ocr" style="height:500px;width:600px;float:right ">
+	<h2>For .rtf files: </h2>
+	<p>(Directions written using <%= link_to("Libre Office", "http://www.libreoffice.org/", :target => "_blank") %>)
+	<ol>
+		<li>In gmail, scroll down to the appropriate file attachment & <b>Click "View as HTML"</b></li>
+		<li>In the html view, <b>Select All & Copy </b>
+		<li><b>Paste</b> into a <u>word processor</u></li> and <b>Save with a .html extensension</b><br></li>
+		<li>Open your new .html file in a <u>text editor</u>, <b>Select All & Copy </b></li>
+		<li><b>Paste</b> into the box below & <b>Click Submit</b>!</li>
+	</ol> 
+
+	<%= form_for(@harvest) do |f| %>
+	 
+
+		<div class="field">
+
+			<%= f.text_area :raw_text, size: "70x15", placeholder: "Paste the source code here..." %>
+
+		</div>
+
+
+
+	<%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+	<% end %>
+</div>
