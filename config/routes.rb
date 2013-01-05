@@ -1,8 +1,13 @@
 OnlineHarvestApp::Application.routes.draw do
 
-  root :to => "harvests#new"
+  root :to => "static_pages#home"
 
   resources :harvests
+
+  resources :ocr_harvests
+
+  match 'tips', :to => 'static_pages#tips' 
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

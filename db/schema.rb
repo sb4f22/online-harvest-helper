@@ -11,9 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121127060616) do
+ActiveRecord::Schema.define(:version => 20130103230837) do
 
   create_table "harvests", :force => true do |t|
+    t.text     "raw_text"
+    t.text     "output_text"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "ocr_harvests", :force => true do |t|
     t.text     "raw_text"
     t.text     "output_text"
     t.datetime "created_at",  :null => false

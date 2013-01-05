@@ -1,20 +1,64 @@
-<h1> Welcome to an On-line Harvest App for Byliner </h1>
+<h1> A Harvest Helper App for Byliner </h1>
 
-<h3> This app will automatically catch all bold and italic cases and put them in the markdown format used by Byliner </h3><br><br>
+<p>
+	This app helps you: 
+<ul>
+	<li>Automatically markdown <strong>bold</strong> and <i>italic</i> words</li>
+	<li>Correct common OCR misreads</li>
+	<li>Space and format OCR files from ABBY (saved as ".html")</li>
+</ul>
+</p>
 
-<h2> Step 1: Right Click on the webpage of the article and select "view source" </h2><br><br>
+<br><br>
 
-<h2> Step 2: Scroll down to the text of the article, paste it below, and Click Submit: <h2>
+<div class="from_ocr">
+	<h1> From OCR: </h1>
 
-<%= form_for @harvest do |f| %> 
- 
+	<p> Step 1: In Gmail, scroll down to the attached article & Click "View" </p>
 
-	<div class="field">
+	<p> Step 2: In the View, Right Click and Select "View Page Source" </p>
 
-		<%= f.text_area :raw_text, placeholder: "Paste the source code here..." %>
-
-	</div>
+	<p> Step 3: In Page Source, Copy all, Paste it below, and Click Submit: </p><br>
 
 
-<%= f.submit "Post", class: "btn btn-large btn-primary" %>
-<% end %>
+	<%= form_for @ocr_harvest do |f| %> 
+	 
+
+		<div class="field">
+
+			<%= f.text_area :raw_text, placeholder: "Paste html here..." %>
+
+		</div>
+
+
+	<%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+	<% end %>
+</div>
+
+
+<div class="from_website">
+	<h1> From a Website: </h1>
+
+	<p> Step 1: Goto the Print Page of your assigned article (if there is no print page, see <%= link_to "Tips", tips_path, :target => '_blank' %>) </p>
+
+	<p> Step 2: In the Print Page View, Right Click and select "View Page Source" </p>
+
+	<p> Step 3: In Page Source, Copy all, Paste it below, and Click Submit: </p>
+
+	
+
+	<%= form_for @harvest do |f| %> 
+	 
+
+		<div class="field">
+
+			<%= f.text_area :raw_text, placeholder: "Paste html here..." %>
+
+		</div>
+
+
+	<%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+	<% end %>
+</div>
+
+
