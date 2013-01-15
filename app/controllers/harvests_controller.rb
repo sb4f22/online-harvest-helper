@@ -26,6 +26,7 @@ class HarvestsController < ApplicationController
 		@out9 = @out8.gsub("<I>","*")
 		@out10 = @out9.gsub("</I>","*")
 		@out11 = @out10.gsub("<B>","**")
-		@out12 = @out11.gsub("</B>","**")									
+		@out12 = @out11.gsub("</B>","**")		
+		@out13 = @out12.gsub(/--/,"&#8212;")							
 	end
 end
